@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formHeading 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <h1>Création d'une rubrique</h1>
+
+    {{ form_start(formHeading) }}
+
+    {{ form_row(formHeading.title, {'attr':{'placeholder': "Titre de la rubrique"} }) }}
+
+
+
+    {{ form_row(formHeading.position, {'attr':{'placeholder': "position"} }) }}
+
+
+    {{ form_row(formHeading.active, {'attr':{'placeholder': "position"} }) }}
+
+
+
+    <button type="submit" class="btn btn-danger">
+        {% if editMode %}
+            mettre à jour la rubrique
+        {% else %}
+            Ajouter la rubrique
+        {% endif %}
+    </button>
+
+    {{ form_end(formHeading) }}
+
+{% endblock %}

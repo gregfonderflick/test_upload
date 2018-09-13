@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}} {{ controller_name }} Réciprocité 54{% endblock %}
+
+{% block body %}
+
+    <article>
+        <h2>{{heading.title}}</h2>
+        <div class="metadata"></div>
+        <div class="content">
+            <p>{{heading.position | raw }}</p>
+        </div>
+    </article>
+    <a href="{{ path('heading_edit', {'id':heading.id}) }}" class="btn btn-danger">modifier</a>
+    <a href="{{ path('heading_delete', {'id':heading.id}) }}" class="btn btn-danger">supprimer</a>
+{% endblock %}
